@@ -3,7 +3,7 @@ import cn from 'classnames';
 import '../scss/styles.scss'
 import MyForm from './MyForm/MyForm.jsx';
 import Carousel from './Carousel/Carousel.jsx';
-import TodoList from './TodoList/TodoList.jsx';
+import TodoList from './TodoList/TodoBox.jsx';
 import Modal from './Modal/Component.jsx';
 import Logger from './Logger/Logger.jsx';
 

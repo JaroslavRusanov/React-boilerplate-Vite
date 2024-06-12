@@ -1,7 +1,8 @@
+// Usually  carousel with images
+
 import React from 'react';
 import cn from 'classnames';
-
-const images = ['/images/first.jpeg', '/images/second.jpeg', '/images/third.jpeg'];
+import { uniqueId } from 'lodash';
 
 export default class Carousel extends React.Component {
   constructor(props) {
@@ -36,8 +37,8 @@ export default class Carousel extends React.Component {
     const carouselItem = images.map((image, i) => {
       const classNamesItem = cn('carousel-item', { active:  i === this.state.activePosition })
       return (
-        <div key={i} className={classNamesItem}>
-          <img alt="" className="d-block w-100" src={image} />
+        <div key={uniqueId()} className={classNamesItem}>
+          <img alt="image" className="d-block w-100" src={image} />
         </div>
       );
     })
@@ -60,3 +61,9 @@ export default class Carousel extends React.Component {
   }
 }
 
+Carousel.defaultProps = {
+  images: ['/images/carousel/first.jpeg',
+    '/images/carousel/second.jpeg',
+    '/images/carousel/third.jpeg',
+  ],
+}
